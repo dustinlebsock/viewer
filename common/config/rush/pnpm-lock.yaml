@@ -90,6 +90,7 @@ dependencies:
   eslint-config-airbnb: 18.2.1_470a05864b8bea6dee6c86b11040c3c2
   eslint-config-prettier: 6.15.0_eslint@7.29.0
   eslint-config-react-app: 6.0.0_84a3b7e98ea744994aa0569aff7636f8
+  eslint-plugin-deprecation: 1.2.1_eslint@7.29.0+typescript@4.3.5
   eslint-plugin-flowtype: 5.8.0_eslint@7.29.0
   eslint-plugin-import: 2.23.4_eslint@7.29.0
   eslint-plugin-jsx-a11y: 6.4.1_eslint@7.29.0
@@ -6447,6 +6448,7 @@ packages:
       eslint: 7.29.0
       eslint-scope: 5.1.1
       eslint-utils: 2.1.0
+      typescript: 4.3.5
     dev: false
     engines:
       node: ^10.12.0 || >=12.0.0
@@ -6568,7 +6570,7 @@ packages:
     dependencies:
       '@typescript-eslint/types': 3.10.1
       '@typescript-eslint/visitor-keys': 3.10.1
-      debug: 4.3.1
+      debug: 4.3.2
       glob: 7.1.7
       is-glob: 4.0.1
       lodash: 4.17.21
@@ -7014,7 +7016,9 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-4I7Td01quW/RpocfNayFdFVk1qSuoh0E7JrbRJ16nH01HhKFQ88INq9Sd+nd72zqRySlr9BmDA8xlEJ6vJMrYA==
-  /ajv-errors/1.0.1:
+  /ajv-errors/1.0.1_ajv@6.12.6:
+    dependencies:
+      ajv: 6.12.6
     dev: false
     peerDependencies:
       ajv: '>=5.0.0'
@@ -10873,6 +10877,19 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-ZXI9B8cxAJIH4nfkhTwcRTEAnrVfobYqwjWy/QMCZ8rHkZHFjf9yO4BzpiF9kCSfNlMG54eKigISHpX0+AaT4A==
+  /eslint-plugin-deprecation/1.2.1_eslint@7.29.0+typescript@4.3.5:
+    dependencies:
+      '@typescript-eslint/experimental-utils': 3.10.1_eslint@7.29.0+typescript@4.3.5
+      eslint: 7.29.0
+      tslib: 1.14.1
+      tsutils: 3.21.0_typescript@4.3.5
+      typescript: 4.3.5
+    dev: false
+    peerDependencies:
+      eslint: ^6.0.0 || ^7.0.0
+      typescript: ^3.7.5 || ^4.0.0
+    resolution:
+      integrity: sha512-8KFAWPO3AvF0szxIh1ivRtHotd1fzxVOuNR3NI8dfCsQKgcxu9fAgEY+eTKvCRLAwwI8kaDDfImMt+498+EgRw==
   /eslint-plugin-flowtype/5.8.0:
     dependencies:
       lodash: 4.17.21
@@ -19758,8 +19775,8 @@ packages:
   /schema-utils/1.0.0:
     dependencies:
       ajv: 6.12.6
-      ajv-errors: 1.0.1
-      ajv-keywords: 3.5.2
+      ajv-errors: 1.0.1_ajv@6.12.6
+      ajv-keywords: 3.5.2_ajv@6.12.6
     dev: false
     engines:
       node: '>= 4'
@@ -19769,7 +19786,7 @@ packages:
     dependencies:
       '@types/json-schema': 7.0.7
       ajv: 6.12.6
-      ajv-keywords: 3.5.2
+      ajv-keywords: 3.5.2_ajv@6.12.6
     dev: false
     engines:
       node: '>= 8.9.0'
@@ -19779,7 +19796,7 @@ packages:
     dependencies:
       '@types/json-schema': 7.0.7
       ajv: 6.12.6
-      ajv-keywords: 3.5.2
+      ajv-keywords: 3.5.2_ajv@6.12.6
     dev: false
     engines:
       node: '>= 10.13.0'
@@ -22544,7 +22561,7 @@ packages:
       '@webassemblyjs/wasm-parser': 1.9.0
       acorn: 6.4.2
       ajv: 6.12.6
-      ajv-keywords: 3.5.2
+      ajv-keywords: 3.5.2_ajv@6.12.6
       chrome-trace-event: 1.0.3
       enhanced-resolve: 4.5.0
       eslint-scope: 4.0.3
@@ -23396,6 +23413,7 @@ packages:
       '@babel/preset-env': 7.14.7
       '@babel/preset-react': 7.14.5
       '@bentley/ui-core': 3.0.0-dev.5_9e97019fe504ca0ac451299e525741b6
+      '@itwin/itwinui-react': 1.12.0_react-dom@16.13.1+react@16.13.1
       '@svgr/cli': 5.5.0
       '@testing-library/react': 10.4.9_react-dom@16.13.1+react@16.13.1
       '@types/jest': 26.0.23
@@ -23437,7 +23455,7 @@ packages:
       '@bentley/ui-abstract': '*'
       webpack: '*'
     resolution:
-      integrity: sha512-eFTj8UpEcWTWOBgExtQVChZHVeB9oCUE7GZAtcggAdNxjl64wqnckq42d+xX0qsqHEZLvHklJYFZquqiOU1HZQ==
+      integrity: sha512-BJ3X3jVpmCI9ycv0qcPqZJtPWXgQeZxVDgYWSo+at6uAfLnEn2clTV71hIc+sT8aW9RvfmiPSqddkMsxu8/WgA==
       tarball: 'file:projects/error-handling-react.tgz'
     version: 0.0.0
   'file:projects/viewer-react.tgz_d8413edee41270ea20d1edd85031bd85':
@@ -23512,6 +23530,7 @@ packages:
       eslint-config-airbnb: 18.2.1_470a05864b8bea6dee6c86b11040c3c2
       eslint-config-prettier: 6.15.0_eslint@7.29.0
       eslint-config-react-app: 6.0.0_84a3b7e98ea744994aa0569aff7636f8
+      eslint-plugin-deprecation: 1.2.1_eslint@7.29.0+typescript@4.3.5
       eslint-plugin-flowtype: 5.8.0_eslint@7.29.0
       eslint-plugin-import: 2.23.4_eslint@7.29.0
       eslint-plugin-jsx-a11y: 6.4.1_eslint@7.29.0
@@ -23533,7 +23552,7 @@ packages:
     peerDependencies:
       typescript: '*'
     resolution:
-      integrity: sha512-4GxBxPZPH5O66vtCBeIZJNUVrCknbdbUZsK5orE8+NlylEsBcTra3SsA7kI39WpM3EfAiSHNM29XmulyTLbYmQ==
+      integrity: sha512-q613emU6u0q1lbA0CcAqDdh4UgTeYNXc+BB8zjMdfwXoM4rpSq4KmV/i49lcSiDSEE+90A8foMAeM6GtRbcm3w==
       tarball: 'file:projects/viewer-scripts.tgz'
     version: 0.0.0
   'file:projects/web-viewer-react.tgz_webpack@4.42.0':
@@ -23735,6 +23754,7 @@ specifiers:
   eslint-config-airbnb: ^18.2.1
   eslint-config-prettier: ^6.11.0
   eslint-config-react-app: ^6.0.0
+  eslint-plugin-deprecation: 1.2.1
   eslint-plugin-flowtype: ^5.2.0
   eslint-plugin-import: ^2.22.0
   eslint-plugin-jsx-a11y: ^6.3.1
