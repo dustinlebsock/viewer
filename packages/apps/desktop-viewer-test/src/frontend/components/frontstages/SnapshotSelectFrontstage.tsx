@@ -4,13 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { Logger } from "@bentley/bentleyjs-core";
-import {
-  Button,
-  ButtonSize,
-  ButtonType,
-  FillCentered,
-  Headline,
-} from "@bentley/ui-core";
+import { FillCentered } from "@bentley/ui-core";
 import {
   BackstageAppButton,
   ConfigurableCreateInfo,
@@ -25,6 +19,7 @@ import {
   Widget,
   Zone,
 } from "@bentley/ui-framework";
+import { Button, Headline } from "@itwin/itwinui-react";
 import { OpenDialogOptions, OpenDialogReturnValue } from "electron";
 import * as React from "react";
 
@@ -122,11 +117,7 @@ class LocalFilePage extends React.Component {
           <Headline>{title}</Headline>
         </div>
         <FillCentered>
-          <Button
-            size={ButtonSize.Large}
-            buttonType={ButtonType.Primary}
-            onClick={this._clickInput}
-          >
+          <Button size={"large"} styleType={"cta"} onClick={this._clickInput}>
             {buttonLabel}
           </Button>
         </FillCentered>

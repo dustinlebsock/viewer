@@ -41,6 +41,7 @@ dependencies:
   '@bentley/ui-framework': 3.0.0-dev.5_e6f2c067822e9fa8a00180bd089535c3
   '@bentley/ui-ninezone': 3.0.0-dev.5_892002a55de6e493ef166d3c5c327fb0
   '@bentley/webgl-compatibility': 3.0.0-dev.5_960b990e1efcd462c342dfd58a9b61d3
+  '@itwin/itwinui-react': 1.12.0
   '@microsoft/applicationinsights-react-js': 2.3.1
   '@microsoft/applicationinsights-web': 2.3.1
   '@reduxjs/toolkit': 1.6.0_react-redux@7.2.4
@@ -23356,6 +23357,7 @@ packages:
       '@bentley/ui-framework': 3.0.0-dev.5_c1e51dd905508676eff299075428bed1
       '@bentley/ui-ninezone': 3.0.0-dev.5_e04e757162dd66b52422314c08ff8916
       '@bentley/webgl-compatibility': 3.0.0-dev.5_960b990e1efcd462c342dfd58a9b61d3
+      '@itwin/itwinui-react': 1.12.0_react-dom@16.13.1+react@16.13.1
       '@reduxjs/toolkit': 1.6.0_react-redux@7.2.4+react@16.13.1
       '@types/electron-devtools-installer': 2.2.0
       '@types/minimist': 1.2.1
@@ -23384,7 +23386,7 @@ packages:
     peerDependencies:
       redux: '*'
     resolution:
-      integrity: sha512-1Nf0Rc4izWeXojcIdPnS2ukgafgIfg865q+0i81fOnutkwvQWfeLwvYrEzFEWIuhWoyz33WvZP3ht5mPMt1RNw==
+      integrity: sha512-p6m4+HT9YezkRGisnfwmUrgNBXfBKUHuc4FirMgLmei0tu0gjgUpHUEzrk/YwpEIZVrYGpSKRbnrOxyNsljXHA==
       tarball: 'file:projects/desktop-viewer-test.tgz'
     version: 0.0.0
   'file:projects/error-handling-react.tgz_09e0745b682941ca1df5b5053fa3e869':
@@ -23467,6 +23469,7 @@ packages:
       '@bentley/ui-framework': 3.0.0-dev.5_c1e51dd905508676eff299075428bed1
       '@bentley/ui-ninezone': 3.0.0-dev.5_e04e757162dd66b52422314c08ff8916
       '@bentley/webgl-compatibility': 3.0.0-dev.5_960b990e1efcd462c342dfd58a9b61d3
+      '@itwin/itwinui-react': 1.12.0_react-dom@16.13.1+react@16.13.1
       '@microsoft/applicationinsights-react-js': 2.3.1
       '@microsoft/applicationinsights-web': 2.3.1
       '@testing-library/jest-dom': 4.2.4
@@ -23498,7 +23501,7 @@ packages:
       '@bentley/ecschema-metadata': '*'
       webpack: '*'
     resolution:
-      integrity: sha512-hyB3H70lmch8I2niLP0ygOJSspQMEvMOPImPF/TjxlToWT8Fpxi557+2bXDeZIqp6COHwUto3/4vMWRnpYtzsg==
+      integrity: sha512-ZM62SXU8HGGOJSJOXmuUHXBGTXYFWjXDOX8LC25J0mshbqT8DeFafHF+rg3SDrN7M1ORX3ramFd43MSd+Xwdjg==
       tarball: 'file:projects/viewer-react.tgz'
     version: 0.0.0
   'file:projects/viewer-scripts.tgz_typescript@4.3.5':
@@ -23614,6 +23617,7 @@ packages:
       '@bentley/ui-framework': 3.0.0-dev.5_c1e51dd905508676eff299075428bed1
       '@bentley/ui-ninezone': 3.0.0-dev.5_e04e757162dd66b52422314c08ff8916
       '@bentley/webgl-compatibility': 3.0.0-dev.5_960b990e1efcd462c342dfd58a9b61d3
+      '@itwin/itwinui-react': 1.12.0_react-dom@16.13.1+react@16.13.1
       '@svgr/webpack': 5.5.0
       '@types/history': 4.7.8
       '@types/node': 14.17.4
@@ -23635,7 +23639,7 @@ packages:
     peerDependencies:
       webpack: '*'
     resolution:
-      integrity: sha512-pUXlMs0T6eA9K4mnrbYTm7t/y2x07shN0wHPu0NdJqme+uv1dzUVqmCKDekk8hKHxZBVqNz96Lb8rbmQp+VRxQ==
+      integrity: sha512-ruMROz27yhAlWqDeOx8o41gDBevmtgkG9Ekqrea399JILBiNBDiQZFimolORAS2oZHspHpXKYEWisrl9UJQ1IA==
       tarball: 'file:projects/web-viewer-test.tgz'
     version: 0.0.0
 registry: ''
@@ -23682,6 +23686,7 @@ specifiers:
   '@bentley/ui-framework': ^3.0.0-dev.5
   '@bentley/ui-ninezone': ^3.0.0-dev.5
   '@bentley/webgl-compatibility': ^3.0.0-dev.5
+  '@itwin/itwinui-react': ^1.12.0
   '@microsoft/applicationinsights-react-js': 2.3.1
   '@microsoft/applicationinsights-web': 2.3.1
   '@reduxjs/toolkit': ^1.6.0
