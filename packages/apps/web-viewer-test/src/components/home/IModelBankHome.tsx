@@ -4,6 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { BrowserAuthorizationClientConfiguration } from "@bentley/frontend-authorization-client";
+import { IModelBankClient } from "@bentley/imodelhub-client";
 import {
   FitViewTool,
   IModelApp,
@@ -11,7 +12,7 @@ import {
   StandardViewId,
 } from "@bentley/imodeljs-frontend";
 import { ColorTheme } from "@bentley/ui-framework";
-import { Viewer } from "@itwin/web-viewer-react";
+import { IModelBackendOptions, Viewer } from "@itwin/web-viewer-react";
 import React, { useEffect, useState } from "react";
 
 import { history } from "../routing";
@@ -19,10 +20,10 @@ import { Header } from ".";
 import styles from "./Home.module.scss";
 
 /**
- * Test a viewer that uses auth configuration provided at startup
+ * Test a viewer that is connected to an iModelBank
  * @returns
  */
-export const AuthConfigHome: React.FC = () => {
+export const IModelBankHome: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState(
     (IModelApp.authorizationClient?.hasSignedIn &&
       IModelApp.authorizationClient?.isAuthorized) ||
@@ -43,6 +44,20 @@ export const AuthConfigHome: React.FC = () => {
     responseType: "code",
     authority: process.env.IMJS_AUTH_AUTHORITY,
   };
+
+  const backend: IModelBackendOptions = {
+    customBackend: {
+      rpcParams: {
+        info: { title: "sample-backend", version: "1.0" },
+        uriPrefix: "https://dev-imodelbank.bentley.com/imodeljs",
+      },
+    },
+  };
+
+  const imodelClient = new IModelBankClient(
+    "https://dev-imodelbank.bentley.com",
+    undefined
+  );
 
   useEffect(() => {
     setLoggedIn(
@@ -65,7 +80,7 @@ export const AuthConfigHome: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    history.push(`authconfig?contextId=${contextId}&iModelId=${iModelId}`);
+    history.push(`imodelbank?contextId=${contextId}&iModelId=${iModelId}`);
   }, [contextId, iModelId]);
 
   const toggleLogin = async () => {
@@ -135,6 +150,8 @@ export const AuthConfigHome: React.FC = () => {
         theme={ColorTheme.Dark}
         onIModelAppInit={onIModelAppInit}
         viewCreatorOptions={{ viewportConfigurer: viewConfiguration }}
+        backend={backend}
+        imodelClient={imodelClient}
       />
     </div>
   );

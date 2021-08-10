@@ -4,6 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { Vector3d, XAndY, XYAndZ } from "@bentley/geometry-core";
+import { IModelClient } from "@bentley/imodelhub-client";
 import {
   ColorDef,
   RenderMode,
@@ -56,14 +57,6 @@ export type ViewerBackstageItem = BackstageItem & {
   labeli18nKey?: string;
 };
 
-/**
- * iTwin Viewer parameter list
- */
-export interface ItwinViewerParams extends ItwinViewerCommonParams {
-  /** id of the html element where the viewer should be rendered */
-  elementId: string;
-}
-
 export interface IModelLoaderParams {
   /** color theme */
   theme?: ColorTheme | string;
@@ -108,6 +101,8 @@ export interface ItwinViewerInitializerParams {
   iModelDataErrorMessage?: string;
   /** optional ToolAdmin to initialize */
   toolAdmin?: ToolAdmin;
+  /** option imodelClient (defaults to iModelHubClient) */
+  imodelClient?: IModelClient;
 }
 
 /**

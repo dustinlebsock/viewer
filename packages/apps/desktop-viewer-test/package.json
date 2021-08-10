@@ -64,7 +64,7 @@
     "@bentley/ui-framework": "^3.0.0-dev.5",
     "@bentley/ui-ninezone": "^3.0.0-dev.5",
     "@bentley/webgl-compatibility": "^3.0.0-dev.5",
-    "@itwin/desktop-viewer-react": "^1.0.8",
+    "@itwin/desktop-viewer-react": "^1.0.12",
     "@itwin/itwinui-react": "^1.12.0",
     "@reduxjs/toolkit": "^1.6.0",
     "electron": "^11.1.0",
