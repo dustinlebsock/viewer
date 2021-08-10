@@ -34,7 +34,6 @@ export const BaseBlankViewer: React.FC<BlankViewerProps> = ({
   blankConnection,
   viewStateOptions,
   productId,
-  imjsAppInsightsKey,
   i18nUrlTemplate,
   onIModelAppInit,
   additionalI18nNamespaces,
@@ -77,7 +76,6 @@ export const BaseBlankViewer: React.FC<BlankViewerProps> = ({
       BaseInitializer.initialize({
         appInsightsKey,
         productId,
-        imjsAppInsightsKey,
         i18nUrlTemplate,
         onIModelAppInit,
         additionalI18nNamespaces,
@@ -98,7 +96,6 @@ export const BaseBlankViewer: React.FC<BlankViewerProps> = ({
   }, [
     appInsightsKey,
     productId,
-    imjsAppInsightsKey,
     i18nUrlTemplate,
     onIModelAppInit,
     additionalI18nNamespaces,

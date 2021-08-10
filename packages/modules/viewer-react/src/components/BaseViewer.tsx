@@ -35,7 +35,6 @@ export const BaseViewer: React.FC<ViewerProps> = ({
   uiFrameworkVersion,
   viewportOptions,
   uiProviders,
-  imjsAppInsightsKey,
   i18nUrlTemplate,
   onIModelAppInit,
   additionalI18nNamespaces,
@@ -72,7 +71,6 @@ export const BaseViewer: React.FC<ViewerProps> = ({
       void BaseInitializer.initialize({
         appInsightsKey,
         productId,
-        imjsAppInsightsKey,
         i18nUrlTemplate,
         onIModelAppInit,
         additionalI18nNamespaces,
@@ -96,7 +94,6 @@ export const BaseViewer: React.FC<ViewerProps> = ({
   }, [
     appInsightsKey,
     productId,
-    imjsAppInsightsKey,
     i18nUrlTemplate,
     additionalI18nNamespaces,
     additionalRpcInterfaces,

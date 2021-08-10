@@ -9,6 +9,7 @@ import { Id64 } from "@bentley/bentleyjs-core";
 import { ViewState } from "@bentley/imodeljs-frontend";
 import { MultiElementPropertyGridWidgetControl } from "@bentley/property-grid-react";
 import { TreeWidgetControl } from "@bentley/tree-widget-react";
+import { WidgetState } from "@bentley/ui-abstract";
 import {
   ContentGroup,
   ContentLayoutDef,
@@ -22,7 +23,6 @@ import {
   SyncUiEventId,
   UiFramework,
   Widget,
-  WidgetState,
   Zone,
   ZoneLocation,
   ZoneState,
