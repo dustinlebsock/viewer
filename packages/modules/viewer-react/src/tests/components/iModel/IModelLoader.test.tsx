@@ -3,7 +3,6 @@
  * See LICENSE.md in the project root for license terms and full copyright notice.
  *--------------------------------------------------------------------------------------------*/
 
-import { Config } from "@bentley/bentleyjs-core";
 import { Range3d } from "@bentley/geometry-core";
 import { Cartographic, ColorDef } from "@bentley/imodeljs-common";
 import {
@@ -149,7 +148,6 @@ describe("IModelLoader", () => {
     jest
       .spyOn(UrlDiscoveryClient.prototype, "discoverUrl")
       .mockResolvedValue("https://test.com");
-    jest.spyOn(Config.App, "get").mockReturnValue(1);
     jest
       .spyOn(SnapshotConnection, "openFile")
       .mockResolvedValue({ isBlankConnection: () => true } as any);

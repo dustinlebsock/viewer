@@ -8,6 +8,7 @@ import "./DefaultFrontstage.scss";
 import { Id64 } from "@bentley/bentleyjs-core";
 import { ViewState } from "@bentley/imodeljs-frontend";
 import { MultiElementPropertyGridWidgetControl } from "@bentley/property-grid-react";
+import { WidgetState } from "@bentley/ui-abstract";
 import {
   ContentGroup,
   ContentLayoutDef,

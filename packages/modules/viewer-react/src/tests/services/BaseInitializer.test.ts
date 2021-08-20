@@ -4,9 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import {
+  DevToolsRpcInterface,
   IModelReadRpcInterface,
   IModelTileRpcInterface,
-  IModelWriteRpcInterface,
   SnapshotIModelRpcInterface,
 } from "@bentley/imodeljs-common";
 import { IModelApp } from "@bentley/imodeljs-frontend";
@@ -102,7 +102,7 @@ describe("BaseInitializer", () => {
   });
 
   it("registers additional rpcInterfaces", () => {
-    const additionalRpcInterfaces = [IModelWriteRpcInterface];
+    const additionalRpcInterfaces = [DevToolsRpcInterface];
 
     const appOptions = getIModelAppOptions({
       additionalRpcInterfaces: additionalRpcInterfaces,
@@ -113,7 +113,7 @@ describe("BaseInitializer", () => {
       IModelTileRpcInterface,
       PresentationRpcInterface,
       SnapshotIModelRpcInterface,
-      IModelWriteRpcInterface,
+      DevToolsRpcInterface,
     ]);
   });
 
