@@ -1,6 +1,20 @@
 # Change Log - @itwin/viewer-react
 
-This log was last generated on Tue, 10 Aug 2021 14:16:48 GMT and should not be manually modified.
+This log was last generated on Thu, 19 Aug 2021 16:48:09 GMT and should not be manually modified.
+
+## 1.4.1
+Thu, 19 Aug 2021 16:48:09 GMT
+
+### Patches
+
+- Fix race condition with user provided viewstate
+
+## 1.4.0
+Mon, 16 Aug 2021 13:47:40 GMT
+
+### Minor changes
+
+- Updated base viewer to use the @bentley/tree-widget-react UiProvider instead of the widget control
 
 ## 1.3.0
 Tue, 10 Aug 2021 14:16:48 GMT
