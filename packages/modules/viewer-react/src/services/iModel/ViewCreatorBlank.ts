@@ -45,10 +45,12 @@ export const createBlankViewState = (
 
   viewState.displayStyle.backgroundColor =
     viewStateOptions?.displayStyle?.backgroundColor ?? ColorDef.white;
-  const flags = viewState.viewFlags.clone();
-  flags.grid = viewStateOptions?.viewFlags?.grid ?? false;
-  flags.renderMode =
-    viewStateOptions?.viewFlags?.renderMode ?? RenderMode.SmoothShade;
-  viewState.displayStyle.viewFlags = flags;
+
+  viewState.displayStyle.viewFlags = viewState.viewFlags.copy({
+    grid: viewStateOptions?.viewFlags?.grid ?? false,
+    renderMode:
+      viewStateOptions?.viewFlags?.renderMode ?? RenderMode.SmoothShade,
+  });
+
   return viewState;
 };
