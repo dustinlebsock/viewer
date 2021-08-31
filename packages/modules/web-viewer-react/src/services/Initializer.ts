@@ -12,7 +12,7 @@ import {
   WebViewerAppOpts,
 } from "@bentley/imodeljs-frontend";
 import { UrlDiscoveryClient } from "@bentley/itwin-client";
-import { getIModelAppOptions } from "@itwin/viewer-react";
+import { getIModelAppOptions, makeCancellable } from "@itwin/viewer-react";
 
 import { IModelBackendOptions, WebViewerProps } from "../types";
 import AuthorizationClient from "./auth/AuthorizationClient";
@@ -68,7 +68,7 @@ const initializeRpcParams = async (
 export class WebInitializer {
   private static _initialized: Promise<void>;
   private static _initializing = false;
-  private static _reject: (() => void) | undefined;
+  private static _cancel: (() => void) | undefined;
 
   private static _checkForAuthorizationClient(
     iModelAppOptions: IModelAppOptions,
@@ -95,8 +95,8 @@ export class WebInitializer {
   /** expose initialized cancel method */
   public static cancel: () => void = () => {
     if (WebInitializer._initializing) {
-      if (WebInitializer._reject) {
-        WebInitializer._reject();
+      if (WebInitializer._cancel) {
+        WebInitializer._cancel();
       }
       WebViewerApp.shutdown().catch(() => {
         // Do nothing, its possible that we never started.
@@ -109,33 +109,37 @@ export class WebInitializer {
     if (!IModelApp.initialized && !this._initializing) {
       console.log("starting web viewer");
       this._initializing = true;
-      this._initialized = new Promise(async (resolve, reject) => {
-        try {
-          this._reject = () => reject("Web Startup Cancelled");
-          const rpcParams = await initializeRpcParams(options?.backend);
-          const webViewerOptions: WebViewerAppOpts = {
-            iModelApp: this._checkForAuthorizationClient(
-              getIModelAppOptions(options),
-              options
-            ),
-            webViewerApp: {
-              rpcParams: rpcParams,
-              authConfig: options?.authConfig.config,
-              routing: options?.rpcRoutingToken,
-            },
-          };
-          await WebViewerApp.startup(webViewerOptions);
 
-          console.log("web viewer started");
-          resolve();
-        } catch (error) {
-          console.error(error);
-          reject(error);
-        } finally {
-          this._initializing = false;
-          this._reject = undefined;
-        }
+      const cancellable = makeCancellable(function* () {
+        const rpcParams: BentleyCloudRpcParams = yield initializeRpcParams(
+          options?.backend
+        );
+        const webViewerOptions: WebViewerAppOpts = {
+          iModelApp: WebInitializer._checkForAuthorizationClient(
+            getIModelAppOptions(options),
+            options
+          ),
+          webViewerApp: {
+            rpcParams: rpcParams,
+            authConfig: options?.authConfig.config,
+            routing: options?.rpcRoutingToken,
+          },
+        };
+        yield WebViewerApp.startup(webViewerOptions);
+        console.log("web viewer started");
       });
+
+      WebInitializer._cancel = cancellable.cancel;
+      this._initialized = cancellable.promise
+        .catch((err) => {
+          if (err.reason !== "cancelled") {
+            throw err;
+          }
+        })
+        .finally(() => {
+          WebInitializer._initializing = false;
+          WebInitializer._cancel = undefined;
+        });
     }
   }
 }

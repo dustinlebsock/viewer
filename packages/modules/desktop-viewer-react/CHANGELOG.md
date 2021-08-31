@@ -1,6 +1,18 @@
 # Change Log - @itwin/desktop-viewer-react
 
-This log was last generated on Thu, 19 Aug 2021 16:48:09 GMT and should not be manually modified.
+This log was last generated on Thu, 26 Aug 2021 17:06:47 GMT and should not be manually modified.
+
+## 1.0.16
+Thu, 26 Aug 2021 17:06:47 GMT
+
+*Version update only*
+
+## 1.0.15
+Fri, 20 Aug 2021 19:35:01 GMT
+
+### Patches
+
+- Changed how cencelling initialization works. Cancelling now returns early.
 
 ## 1.0.14
 Thu, 19 Aug 2021 16:48:09 GMT

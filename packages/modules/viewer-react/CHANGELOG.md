@@ -1,6 +1,20 @@
 # Change Log - @itwin/viewer-react
 
-This log was last generated on Thu, 19 Aug 2021 16:48:09 GMT and should not be manually modified.
+This log was last generated on Thu, 26 Aug 2021 17:06:47 GMT and should not be manually modified.
+
+## 1.5.0
+Thu, 26 Aug 2021 17:06:47 GMT
+
+### Minor changes
+
+- Use UiProvider to load PropertyGrid. Add SelectionInfo to statusbar"
+
+## 1.4.2
+Fri, 20 Aug 2021 19:35:01 GMT
+
+### Patches
+
+- Changed how cencelling initialization works. Cancelling now returns early.
 
 ## 1.4.1
 Thu, 19 Aug 2021 16:48:09 GMT
