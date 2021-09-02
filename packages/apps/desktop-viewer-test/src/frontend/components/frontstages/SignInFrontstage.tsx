@@ -3,8 +3,11 @@
  * See LICENSE.md in the project root for license terms and full copyright notice.
  *--------------------------------------------------------------------------------------------*/
 
+import { ClientRequestContext } from "@bentley/bentleyjs-core";
 import { isFrontendAuthorizationClient } from "@bentley/frontend-authorization-client";
 import { IModelApp } from "@bentley/imodeljs-frontend";
+import { StageUsage } from "@bentley/ui-abstract";
+import { FillCentered } from "@bentley/ui-core";
 import {
   BackstageAppButton,
   ConfigurableCreateInfo,
@@ -16,11 +19,11 @@ import {
   FrontstageManager,
   FrontstageProps,
   FrontstageProvider,
-  SignIn,
   ToolWidgetComposer,
   Widget,
   Zone,
 } from "@bentley/ui-framework";
+import { Button } from "@itwin/itwinui-react";
 import * as React from "react";
 
 class SignInControl extends ContentControl {
@@ -30,7 +33,21 @@ class SignInControl extends ContentControl {
     const client = IModelApp.authorizationClient;
     if (isFrontendAuthorizationClient(client)) {
       this.reactNode = (
-        <SignIn onOffline={this._onWorkOffline} onRegister={this._onRegister} />
+        <>
+          {/* <Button onClick={this._onWorkOffline} />
+          <Button onClick={this._onRegister} /> */}
+          <FillCentered>
+            <Button
+              size={"large"}
+              styleType={"cta"}
+              onClick={async () => {
+                await client.signIn(new ClientRequestContext());
+              }}
+            >
+              {"Sign in"}
+            </Button>
+          </FillCentered>
+        </>
       );
     } else {
       this.reactNode = null;
@@ -76,6 +93,7 @@ export class SignInFrontstage extends FrontstageProvider {
         defaultLayout={this._contentLayoutDef}
         contentGroup={contentGroup}
         isInFooterMode={false}
+        usage={StageUsage.Private}
         contentManipulationTools={
           <Zone
             widgets={[

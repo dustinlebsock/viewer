@@ -4,6 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IModelInfo, IModelSelector } from "@bentley/imodel-select-react";
+import { StageUsage } from "@bentley/ui-abstract";
 import {
   BackstageAppButton,
   ConfigurableCreateInfo,
@@ -70,6 +71,7 @@ export class IModelSelectFrontstage extends FrontstageProvider {
         defaultLayout={this._contentLayoutDef}
         contentGroup={contentGroup}
         isInFooterMode={false}
+        usage={StageUsage.Private}
         contentManipulationTools={
           <Zone
             widgets={[

@@ -5,6 +5,7 @@
 
 import { BackstageItem } from "@bentley/ui-abstract";
 import {
+  BackstageComposer,
   ConfigurableUiContent,
   FrameworkVersion,
   FrontstageManager,
@@ -14,8 +15,6 @@ import {
 import React, { useEffect } from "react";
 
 import { ViewerFrontstage } from "../../types";
-import AppBackstageComposer from "../app-ui/backstage/AppBackstageComposer";
-
 interface ModelProps {
   frontstages: ViewerFrontstage[];
   backstageItems: BackstageItem[];
@@ -52,7 +51,7 @@ export const IModelViewer: React.FC<ModelProps> = ({
     <ThemeManager>
       <FrameworkVersion version={uiFrameworkVersion || "2"}>
         <ConfigurableUiContent
-          appBackstage={<AppBackstageComposer items={backstageItems} />}
+          appBackstage={<BackstageComposer items={backstageItems} />}
         />
       </FrameworkVersion>
     </ThemeManager>

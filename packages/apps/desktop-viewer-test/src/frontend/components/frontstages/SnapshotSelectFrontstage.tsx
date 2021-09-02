@@ -4,6 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { Logger } from "@bentley/bentleyjs-core";
+import { StageUsage } from "@bentley/ui-abstract";
 import { FillCentered } from "@bentley/ui-core";
 import {
   BackstageAppButton,
@@ -65,6 +66,7 @@ export class SnapshotSelectFrontstage extends FrontstageProvider {
         defaultLayout={this._contentLayoutDef}
         contentGroup={contentGroup}
         isInFooterMode={false}
+        usage={StageUsage.Private}
         contentManipulationTools={
           <Zone
             widgets={[
