@@ -20,6 +20,7 @@ import {
 } from "@bentley/imodeljs-frontend";
 import { I18N } from "@bentley/imodeljs-i18n";
 import { UrlDiscoveryClient } from "@bentley/itwin-client";
+import { MeasureTools } from "@bentley/measure-tools-react";
 import { PresentationRpcInterface } from "@bentley/presentation-common";
 import { Presentation } from "@bentley/presentation-frontend";
 import { PropertyGridManager } from "@bentley/property-grid-react";
@@ -226,8 +227,8 @@ export class BaseInitializer {
       }
 
       yield PropertyGridManager.initialize(IModelApp.i18n);
-
       yield TreeWidget.initialize(IModelApp.i18n);
+      yield MeasureTools.startup();
 
       // override the default data error message
       BaseInitializer._iModelDataErrorMessage =
